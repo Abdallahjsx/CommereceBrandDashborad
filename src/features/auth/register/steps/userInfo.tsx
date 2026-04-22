@@ -10,6 +10,7 @@ import UploadProfileImage from "@/app/components/inputFields/uploadProfileImage"
 import { userInfoSchema } from "../schemas/userInfoSchema";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Theme } from "@mui/material/styles";
+import { AddIcon } from "@/app/components/icons/icons";
 export default function UserInfo({ setActiveStep }: { setActiveStep: (step: number) => void }) {
     const [seen, setSeen] = useState<boolean>(false)
     const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down("md"));
@@ -34,8 +35,8 @@ export default function UserInfo({ setActiveStep }: { setActiveStep: (step: numb
         },
     });
     return (
-        <Box sx={{ width: { xs: '100vw', md: '40vw' } }}>
-            <Grid container spacing={2} sx={{ flexDirection: "column" }}>
+        <Box sx={{ width: "100%" }}>
+            <Grid container spacing={2} sx={{ flexDirection: "column" }} p={"16px"}>
                 <Grid display={"flex"} justifyContent={"center"}>
                     <UploadProfileImage value={formik.values.profileImage} onChange={(e) => formik.setFieldValue("profileImage", e.target.files?.[0])} error={formik.touched.profileImage && !!formik.errors.profileImage} helperText={formik.errors.profileImage} />
                 </Grid>
@@ -63,8 +64,8 @@ export default function UserInfo({ setActiveStep }: { setActiveStep: (step: numb
                     <GenderField selectedGender={formik.values.gender} setSelectedGender={(val) => { formik.setFieldValue("gender", val); formik.setFieldTouched("gender", true); }} error={formik.touched.gender && !!formik.errors.gender} helperText={formik.errors.gender} />
                 </Grid>
             </Grid>
-            <Box display={"flex"} justifyContent={"center"} mt={"20px"}>
-                <GradientButton onClick={formik.handleSubmit} disabled={false} borderRadius="10px" width="50%" height="100%" >
+            <Box display={"flex"} justifyContent={"center"} mt={"20px"} sx={{ width: { xs: "100%", md: "50%" } }} mx={"auto"}>
+                <GradientButton onClick={formik.handleSubmit} disabled={false} borderRadius="10px" width="100%" height="100%" >
                     <Typography
                         variant="h6"
                         fontWeight={500}

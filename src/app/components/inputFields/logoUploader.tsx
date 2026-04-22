@@ -47,7 +47,7 @@ export default function Uploader({ value, setValue, error, helperText }: { value
                         <Card
                             sx={{
                                 bgcolor: "#E5E2DB4D",
-                                height: "100%",
+                                height: "180px",
                                 borderRadius: "4px",
                                 border: "dashed 2px ",
                                 borderColor: error ? "red" : "#0000001A",

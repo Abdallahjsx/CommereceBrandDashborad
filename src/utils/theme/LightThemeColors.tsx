@@ -13,7 +13,7 @@ const LightThemeColors = [
 
       },
       background: {
-        default: '#f5f5f5',
+        default: '#f4f2ecff',
         dark: '#2A3547',
         paper: '#ffffff',
       },

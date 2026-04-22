@@ -1,5 +1,5 @@
 'use client'
-import { Grid, Box, Card, Typography, LinearProgress } from "@mui/material";
+import { Grid, Box, Card, Typography, LinearProgress, Stack } from "@mui/material";
 import Image from "next/image";
 
 import PageContainer from "@/app/components/container/PageContainer";
@@ -38,69 +38,65 @@ export default function Register2() {
     <PageContainer title="Register Page" description="this is Sample page">
 
       <AuthPageContainer>
-        <Grid
+        <Stack
           zIndex={1}
-          container
-          spacing={7}
+          gap={2}
           justifyContent="flex-start"
           alignItems="center"
           sx={{ minHeight: "100vh", flexDirection: "column" }}
-          py={"10px"}
+          py={{ xs: "0px", sm: "10px", md: "10px" }}
+          px={{ xs: "0px", sm: "5px", md: "10px" }}
+          mx={"0px"}
+          width={{ xs: "100vw", sm: "90vw", md: "70vw", lg: "50vw" }}
         >
-          <Grid width={{ xs: "90%", sm: "80%", md: "50vw" }} sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Box width={"100%"} sx={{ display: { xs: 'none', md: 'block' } }} >
             <Card sx={{ p: { xs: 1, sm: 2 } }}>
               <MainStepper activeStep={activeStep - 1} />
             </Card>
-          </Grid>
-          <Grid
-            width={{ xs: "95vw", md: "80vw" }}
-            // width={"fit-content"}
-            display="flex"
-            justifyContent="center"
-            alignItems={{ xs: "center", md: "flex-start" }}
-            sx={{ flex: 1, p: { xs: 1, sm: 3 } }}>
+          </Box>
 
-            <Card
-              sx={{ boxShadow: '0px 3px 6px 0px #0000000A', width: "fit-content" }}
-            >
-              <Box display="flex" alignItems="center" justifyContent="center">
-                <Image
-                  src={'/images/logo/mainLogo.svg'}
-                  alt='logo'
-                  height={120}
-                  width={120}
-                  style={{ maxWidth: "320px", maxHeight: "320px", width: "50%", height: "50%" }}
-                />
-              </Box>
+          <Card
+            sx={{ boxShadow: '0px 3px 6px 0px #0000000A', width: "100%", borderRadius: { xs: "0px", sm: "16px" }, flexGrow: 1, display: "flex", flexDirection: "column", my: "0px !important", backgroundColor: "background.default" }}
+          >
+            <Box display="flex" alignItems="center" justifyContent="center" >
+              <Image
+                src={'/images/logo/mainLogo.svg'}
+                alt='logo'
+                height={120}
+                width={120}
+                style={{ maxWidth: "320px", maxHeight: "320px", width: "50%", height: "50%" }}
+              />
+            </Box>
+            <Box>
               <Button onClick={() => setActiveStep(activeStep - 1)}>Back</Button>
               <Button onClick={() => setActiveStep(activeStep + 1)}>Next</Button>
-              <Box sx={{ display: { xs: 'block', md: 'none' }, px: 4 }} textAlign={"center"}>
-                <Typography variant="body1" sx={{ color: "primary.main", fontWeight: "600", mb: 1 }}>
-                  Step {activeStep} of 5
-                </Typography>
-                <LinearProgress
-                  variant="determinate"
-                  value={(activeStep / 5) * 100}
-                  sx={{
-                    height: 8,
+            </Box>
+
+            <Box sx={{ display: { xs: 'block', md: 'none' }, px: 4, mb: 7 }} textAlign={"center"}>
+              <Typography variant="body1" sx={{ color: "primary.main", fontWeight: "600", mb: 1 }}>
+                Step {activeStep} of 5
+              </Typography>
+              <LinearProgress
+                variant="determinate"
+                value={(activeStep / 5) * 100}
+                sx={{
+                  height: 8,
+                  borderRadius: 5,
+                  bgcolor: "rgba(0, 0, 0, 0.05)",
+                  "& .MuiLinearProgress-bar": {
                     borderRadius: 5,
-                    bgcolor: "rgba(0, 0, 0, 0.05)",
-                    "& .MuiLinearProgress-bar": {
-                      borderRadius: 5,
-                      bgcolor: "primary.main",
-                    },
-                  }}
-                />
-              </Box>
-              <Box display={"flex"} justifyContent={"center"} mt={6}>
-                {renderStep()}
-              </Box>
+                    bgcolor: "primary.main",
+                  },
+                }}
+              />
+            </Box>
+            <Box width={"100%"} flexGrow={1} display={"flex"} flexDirection={"column"} alignItems={"center"}>
+              {renderStep()}
+            </Box>
 
-            </Card>
+          </Card>
 
-          </Grid>
-
-        </Grid>
+        </Stack>
       </AuthPageContainer>
 
 

@@ -6,23 +6,23 @@ import Image from "next/image";
 type imageCardUploaderProps = {
     value: File | null,
     setValue: (value: File | null) => void,
-    error: boolean | undefined,
-    helperText: string | undefined,
-    type: "fid" | "bid" | "selfie",
+    type: "frontId" | "backId" | "selfie",
+    errorStep: "frontId" | "backId" | "selfie" | null,
     label: string,
+    setErrorStep: (step: "frontId" | "backId" | "selfie" | null) => void,
 }
-export default function ImageCardUploader({ value, setValue, error, helperText, type, label }: imageCardUploaderProps) {
+export default function ImageCardUploader({ value, setValue, type, label, errorStep, setErrorStep }: imageCardUploaderProps) {
     const [preview, setPreview] = useState<string | null>(null);
-    function getTitle() {
-        switch (type) {
-            case "fid":
-                return "frontID.png";
-            case "bid":
-                return "backID.png";
-            case "selfie":
-                return "screen.png";
-        }
-    }
+    // function getTitle() {
+    //     switch (type) {
+    //         case "fid":
+    //             return "frontID.png";
+    //         case "bid":
+    //             return "backID.png";
+    //         case "selfie":
+    //             return "screen.png";
+    //     }
+    // }
 
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +40,7 @@ export default function ImageCardUploader({ value, setValue, error, helperText, 
 
         const objectUrl = URL.createObjectURL(value);
         setPreview(objectUrl);
+        setErrorStep(null);
 
         return () => URL.revokeObjectURL(objectUrl);
     }, [value]);
@@ -50,8 +51,9 @@ export default function ImageCardUploader({ value, setValue, error, helperText, 
                     sx={{
                         position: "relative",
                         height: "200px",
-                        width: "100%",
-                        borderRadius: "4px",
+                        width: { sm: "100%", md: "70%" },
+                        mx: "auto",
+                        borderRadius: "10px",
 
 
                         "&:hover .hover-overlay": {
@@ -63,23 +65,32 @@ export default function ImageCardUploader({ value, setValue, error, helperText, 
                     {!preview ? (
                         <Box
                             sx={{
-                                bgcolor: "white",
+                                bgcolor: "#E5E2DB4D",
                                 height: "90%",
                                 borderRadius: "4px",
                                 border: "dashed 2px ",
-                                borderColor: error ? "red" : "#0000001A",
+                                borderColor: errorStep === type ? "red" : "#0000001A",
                                 display: "flex",
                                 flexDirection: "column",
                                 justifyContent: "center",
                                 alignItems: "center",
-                                gap: 1,
                                 position: "relative",
                                 overflow: "hidden",
                             }}
                         >
-                            <Image src={`/images/profile/${getTitle()}`} width={120} height={100} alt="" style={{ objectFit: "contain", width: "100%", height: "100%" }} />
-                            <Box sx={{ position: "absolute", bottom: "50%", right: "45%", bgcolor: "white", borderRadius: "50%", padding: "4px", opacity: 0.7 }}><UploadIcon /></Box>
-
+                            <Box sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                gap: 1,
+                                opacity: 0.8
+                            }}>
+                                <UploadIcon fill="#1C1C18" />
+                                <Typography variant="h6" sx={{ color: "#1C1C18", fontWeight: "600", fontSize: "14px" }}>
+                                    Upload Image
+                                </Typography>
+                            </Box>
                         </Box>
                     ) : (
                         <>
@@ -88,7 +99,7 @@ export default function ImageCardUploader({ value, setValue, error, helperText, 
                                     src={preview}
                                     alt="Preview"
                                     fill
-                                    style={{ objectFit: "cover", borderRadius: "4px" }}
+                                    style={{ objectFit: "contain", borderRadius: "4px" }}
                                     unoptimized
                                 />
                                 <Box
@@ -99,7 +110,6 @@ export default function ImageCardUploader({ value, setValue, error, helperText, 
                                         left: 0,
                                         width: "100%",
                                         height: "100%",
-                                        bgcolor: "rgba(255, 255, 255, 0.4)",
                                         display: "flex",
                                         flexDirection: "column",
                                         justifyContent: "center",
@@ -109,19 +119,19 @@ export default function ImageCardUploader({ value, setValue, error, helperText, 
                                         borderRadius: "4px",
                                     }}
                                 >
-                                    <UploadIcon />
-                                    <Typography variant="h6" sx={{ color: "#1C1C18", fontWeight: "500", fontSize: "14px" }}>
+                                    <UploadIcon fill="white" />
+                                    <Typography variant="h6" sx={{ color: "white", fontWeight: "600", fontSize: "14px", mt: 0.5 }}>
                                         Replace image
                                     </Typography>
-
                                 </Box>
                             </Box>
 
                         </>
-                    )}
-                </Box>
+                    )
+                    }
+                </Box >
                 <Typography textAlign={"center"} variant="h5" sx={{ color: "#1C1C18", fontWeight: "600", mb: "4px" }}>{label}</Typography>
-                {error && <Typography variant="body2" textAlign={"center"} color="error" mt={"2px"}>{helperText}</Typography>}
+                {errorStep === type && <Typography variant="body2" textAlign={"center"} color="error" mt={"2px"}>Please upload the image</Typography>}
                 <input
                     type="file"
                     id={`upload-${type}`}
@@ -129,7 +139,7 @@ export default function ImageCardUploader({ value, setValue, error, helperText, 
                     onChange={handleFileChange}
                     style={{ display: "none" }}
                 />
-            </label>
-        </Box>
+            </label >
+        </Box >
     )
 }

@@ -1,6 +1,7 @@
 import { Box, Typography, Stack } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { AddIcon } from "../icons/icons";
 
 type uploadImageProps = {
     value: File | null,
@@ -33,7 +34,7 @@ export default function UploadImage({ value, onChange, error, helperText }: uplo
                         height: "130px",
                         position: "relative",
                         borderRadius: "50%",
-                        overflow: "hidden",
+                        // overflow: "hidden",
                         border: "2px solid",
                         borderColor: "transparent",
                         transition: "all 0.3s ease",
@@ -53,6 +54,7 @@ export default function UploadImage({ value, onChange, error, helperText }: uplo
                                 height: "130px",
                             }}
                         >
+
                             <Image
                                 src={preview ?? "/images/svgs/user-circle.svg"}
                                 alt="Profile placeholder"
@@ -65,13 +67,18 @@ export default function UploadImage({ value, onChange, error, helperText }: uplo
                             />
                         </div>
                     ) : (
-                        <Image
-                            src="/images/svgs/user-circle.svg"
-                            alt="Profile placeholder"
-                            width={130}
-                            height={130}
-                            style={{ objectFit: "contain" }}
-                        />
+                        <Box position={"relative"}>
+                            <Box sx={{ position: "absolute", bottom: "0px", right: "0px", zIndex: "1" }}>
+                                <AddIcon />
+                            </Box>
+                            <Image
+                                src="/images/svgs/user-circle.svg"
+                                alt="Profile placeholder"
+                                width={130}
+                                height={130}
+                                style={{ objectFit: "contain" }}
+                            />
+                        </Box>
                     )}
                 </Box>
                 <input

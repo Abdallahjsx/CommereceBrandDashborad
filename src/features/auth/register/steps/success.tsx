@@ -1,21 +1,39 @@
 import { Card, Typography, Box, Stack } from "@mui/material";
 import IconBox from "@/app/components/boxes/iconBox";
 import { CompassIcon, MoneyIcon, ListIcon, LockIcon, WatchIcon, UploadIcon2, TimerIcon, AddMember } from "@/app/components/icons/icons";
+import { keyframes } from "@emotion/react";
+import { Grow } from "@mui/material";
 
+const pulse = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+`;
 
 export default function Success() {
     return (
-        <Box display={"flex"} flexDirection={"column"} gap={2} sx={{ width: { xs: '100vw', sm: '50vw' } }}>
+        <Box display={"flex"} flexDirection={"column"} gap={2} sx={{ width: "100%" }}>
             <Stack alignItems={"center"} justifyContent={"center"} flexDirection={"column"} gap={10} width={"100%"}>
-                <Box display={"flex"} flexDirection={"column"} gap={2} alignItems={"center"} justifyContent={"center"} width={"70%"} mx={"auto"}>
-                    <TimerIcon />
-                    <Typography variant="h3" fontWeight={"800"} fontSize={"35px"} color={"primary.main"}>Registration Is Under Review</Typography>
-                    <Typography variant="body1" fontWeight={"400"} fontSize={"18px"} color={"primary.main"}>Our curation team is currently reviewing your brand credentials. This
-                        typically takes 24-48 business hours to ensure community standards
-                        and data integrity.</Typography>
-                </Box>
+                <Grow in={true} timeout={1000}>
+                    <Box
+                        display={"flex"}
+                        flexDirection={"column"}
+                        gap={2}
+                        alignItems={"center"}
+                        justifyContent={"center"}
+                        mx={"auto"}
+                    >
+                        <Box sx={{ animation: `${pulse} 2s infinite ease-in-out` }}>
+                            <TimerIcon />
+                        </Box>
+                        <Typography variant="h3" fontWeight={"800"} fontSize={{ xs: "24px", sm: "30px" }} color={"primary.main"}>Registration Is Under Review</Typography>
+                        <Typography textAlign={"center"} lineHeight={"30px"} variant="body1" fontWeight={"400"} fontSize={{ xs: "14px", sm: "18px" }} color={"primary.main"}>Our curation team is currently reviewing your brand credentials. This
+                            typically takes 24-48 business hours to ensure community standards
+                            and data integrity.</Typography>
+                    </Box>
+                </Grow>
 
-                <Stack flexDirection={"row"} gap={3} width={"100%"} justifyContent={"space-between"}>
+                <Stack flexDirection={"column"} gap={3} width={"100%"} justifyContent={"space-between"} px={{ sm: "7px", md: "30px" }}>
                     {/* first card  */}
                     <Card sx={{ p: "28px", borderRadius: "8px", bgcolor: "#F6F3EC" }}>
                         <Stack flexDirection={"row"} gap={2} justifyContent={"space-between"} alignItems={"center"}>
@@ -26,7 +44,7 @@ export default function Success() {
                         <Stack mt={"20px"} flexDirection={"column"} gap={2} alignItems={"flex-start"}>
                             <WhatCanYou head="Browse Marketplace" label="Explore trends and competitor benchmarks." icon={<CompassIcon />} />
                             <WhatCanYou head="Watch Brand Reels" label="Learn from curated industry success stories." icon={<WatchIcon />} />
-                            <WhatCanYou head="Draft Content" label="Prepare your assets while you wait.." icon={<WatchIcon />} />
+                            <WhatCanYou head="Draft Content" label="Prepare your assets while you wait.." icon={<ListIcon />} />
 
                         </Stack>
                     </Card>
@@ -47,7 +65,7 @@ export default function Success() {
 
                 </Stack>
             </Stack>
-        </Box>
+        </ Box>
     );
 }
 

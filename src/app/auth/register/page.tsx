@@ -2,7 +2,7 @@
 import { Grid, Box, Card, Typography, LinearProgress } from "@mui/material";
 import Image from "next/image";
 
-import PageContainer from "@/app/components/container/PageContainer";
+import PageContainer from "@/components/container/PageContainer";
 
 
 import AuthPageContainer from "../authPageContainer/authPageContainer";

@@ -1,6 +1,6 @@
 'use client'
 import { Grid, Box, Card, Typography, styled } from '@mui/material';
-import PageContainer from '@/app/components/container/PageContainer';
+import PageContainer from '@/components/container/PageContainer';
 import AuthForgotPassword from '../authForms/AuthForgotPassword';
 import NewLogo from '@/app/(DashboardLayout)/layout/shared/logo/NewLogo';
 import Footer from '@/app/(DashboardLayout)/layout/shared/footer/Footer';

@@ -1,12 +1,12 @@
 import { useFormik } from "formik";
 import { Box, Grid, Typography } from "@mui/material";
-import GeneralInputField from "@/app/components/inputFields/generalInputField";
-import BirthDatePicker from "@/app/components/inputFields/datePicker";
-import GenderField from "@/app/components/inputFields/genderField";
-import { EyeHideIcon, EyeIcon } from "@/app/components/icons/icons";
+import GeneralInputField from "@/components/inputFields/generalInputField";
+import BirthDatePicker from "@/components/inputFields/datePicker";
+import GenderField from "@/components/inputFields/genderField";
+import { EyeHideIcon, EyeIcon } from "@/components/icons/icons";
 import { useState } from "react";
-import GradientButton from "@/app/components/buttons/gradientButton";
-import UploadProfileImage from "@/app/components/inputFields/uploadProfileImage";
+import GradientButton from "@/components/buttons/gradientButton";
+import UploadProfileImage from "@/components/inputFields/uploadProfileImage";
 import { userInfoSchema } from "../schemas/userInfoSchema";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Theme } from "@mui/material/styles";

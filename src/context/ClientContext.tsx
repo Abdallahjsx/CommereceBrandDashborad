@@ -5,7 +5,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 import { useContext } from 'react'
 import { CustomizerContext } from './customizerContext'
 import { ThemeSettings } from '@/utils/theme/Theme'
-import RTL from '../(DashboardLayout)/layout/shared/customizer/RTL'
+import RTL from '../app/(DashboardLayout)/layout/shared/customizer/RTL'
 export default function ClientContext({ children }: { children: React.ReactNode }) {
     const theme = ThemeSettings()
     const { activeDir } = useContext(CustomizerContext)

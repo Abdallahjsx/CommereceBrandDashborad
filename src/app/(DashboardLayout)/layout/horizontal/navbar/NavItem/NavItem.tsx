@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { styled, useTheme } from '@mui/material/styles';
 import { useTranslation } from "react-i18next";
-import { CustomizerContext } from "@/app/context/customizerContext";
+import { CustomizerContext } from "@/context/customizerContext";
 import { ItemType } from "@/app/(DashboardLayout)/types/layout/sidebar";
 import { Icon } from "@iconify/react/dist/iconify.js";
 

@@ -2,8 +2,8 @@
 import React, { useContext } from "react";
 import { Box, useTheme, InputAdornment } from "@mui/material";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { CustomizerContext } from "@/app/context/customizerContext";
-import CustomTextField from "@/app/components/forms/theme-elements/CustomTextField";
+import { CustomizerContext } from "@/context/customizerContext";
+import CustomTextField from "@/components/forms/theme-elements/CustomTextField";
 
 const Search = ({
     value,

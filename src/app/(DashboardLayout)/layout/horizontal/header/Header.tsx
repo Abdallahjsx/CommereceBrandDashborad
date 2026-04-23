@@ -7,7 +7,7 @@ import { Theme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { styled } from "@mui/material/styles";
-import { CustomizerContext } from "@/app/context/customizerContext";
+import { CustomizerContext } from "@/context/customizerContext";
 import { IconMenu2, IconMoon, IconSun } from "@tabler/icons-react";
 import Notifications from "../../vertical/header/Notification";
 import Cart from "../../vertical/header/Cart";
@@ -16,7 +16,7 @@ import Search from "../../vertical/header/Search";
 import Language from "../../vertical/header/Language";
 
 import NewLogo from "../../shared/logo/NewLogo";
-import config from "@/app/context/config";
+import config from "@/context/config";
 
 
 
@@ -58,64 +58,64 @@ const Header = () => {
   };
 
   return (
-  
-      <AppBarStyled position="sticky" color="default" elevation={8}>
-        <ToolbarStyled
 
-          sx={{
-            maxWidth: isLayout === "boxed" ? "1368px" : "100%!important",
-          }}
-        >
-          <Box sx={{ width: lgDown ? "45px" : "auto", overflow: "hidden" }}>
-            <NewLogo />
-          </Box>
-          {/* ------------------------------------------- */}
-          {/* Toggle Button Sidebar */}
-          {/* ------------------------------------------- */}
-          {lgDown ? (
-            <IconButton
-              color="inherit"
-              aria-label="menu"
-              onClick={() => setIsMobileSidebar(!isMobileSidebar)}
-            >
-              <IconMenu2 />
-            </IconButton>
-          ) : (
-            ""
-          )}
-          {/* ------------------------------------------- */}
-          {/* Search Dropdown */}
-          {/* ------------------------------------------- */}
-          <Search value={searchText} onChange={handleSearchChange} />
+    <AppBarStyled position="sticky" color="default" elevation={8}>
+      <ToolbarStyled
 
-          <Box flexGrow={1} />
-          <Stack spacing={1} direction="row" alignItems="center">
-            <Language />
-            {/* ------------------------------------------- */}
-            {/* Ecommerce Dropdown */}
-            {/* ------------------------------------------- */}
-            <Cart />
-            <IconButton size="small" color="inherit">
-              {activeMode === "light" ? (
-                <IconMoon
-                  size="21"
-                  stroke="1.5"
-                  onClick={() => setActiveMode("dark")}
-                />
-              ) : (
-                <IconSun
-                  size="21"
-                  stroke="1.5"
-                  onClick={() => setActiveMode("light")}
-                />
-              )}
-            </IconButton>
-            <Notifications />
-            <Profile />
-          </Stack>
-        </ToolbarStyled>
-      </AppBarStyled>
-   
+        sx={{
+          maxWidth: isLayout === "boxed" ? "1368px" : "100%!important",
+        }}
+      >
+        <Box sx={{ width: lgDown ? "45px" : "auto", overflow: "hidden" }}>
+          <NewLogo />
+        </Box>
+        {/* ------------------------------------------- */}
+        {/* Toggle Button Sidebar */}
+        {/* ------------------------------------------- */}
+        {lgDown ? (
+          <IconButton
+            color="inherit"
+            aria-label="menu"
+            onClick={() => setIsMobileSidebar(!isMobileSidebar)}
+          >
+            <IconMenu2 />
+          </IconButton>
+        ) : (
+          ""
+        )}
+        {/* ------------------------------------------- */}
+        {/* Search Dropdown */}
+        {/* ------------------------------------------- */}
+        <Search value={searchText} onChange={handleSearchChange} />
+
+        <Box flexGrow={1} />
+        <Stack spacing={1} direction="row" alignItems="center">
+          <Language />
+          {/* ------------------------------------------- */}
+          {/* Ecommerce Dropdown */}
+          {/* ------------------------------------------- */}
+          <Cart />
+          <IconButton size="small" color="inherit">
+            {activeMode === "light" ? (
+              <IconMoon
+                size="21"
+                stroke="1.5"
+                onClick={() => setActiveMode("dark")}
+              />
+            ) : (
+              <IconSun
+                size="21"
+                stroke="1.5"
+                onClick={() => setActiveMode("light")}
+              />
+            )}
+          </IconButton>
+          <Notifications />
+          <Profile />
+        </Stack>
+      </ToolbarStyled>
+    </AppBarStyled>
+
   );
 };
 export default Header;

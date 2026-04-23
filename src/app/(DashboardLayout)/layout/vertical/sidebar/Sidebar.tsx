@@ -4,10 +4,10 @@ import Drawer from "@mui/material/Drawer";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import SidebarItems from "./SidebarItems";
-import { CustomizerContext } from "@/app/context/customizerContext";
-import config from "@/app/context/config";
+import { CustomizerContext } from "@/context/customizerContext";
+import config from "@/context/config";
 import NewLogo from "@/app/(DashboardLayout)/layout/shared/logo/NewLogo";
-import Scrollbar from "@/app/components/custom-scroll/Scrollbar";
+import Scrollbar from "@/components/custom-scroll/Scrollbar";
 import { Profile } from "./SidebarProfile/Profile";
 import { useContext } from "react";
 
@@ -96,7 +96,7 @@ const Sidebar = () => {
                 {/* ------------------------------------------- */}
                 <SidebarItems />
               </Scrollbar>
-              <Profile />
+              {/* <Profile /> */} 
             </Box>
           </Drawer>
         </Box>

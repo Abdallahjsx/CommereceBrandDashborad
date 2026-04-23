@@ -7,7 +7,7 @@ import NavItem from './NavItem'
 import NavCollapse from './NavCollapse'
 import NavGroup from './NavGroup/NavGroup'
 import { useContext } from 'react'
-import { CustomizerContext } from '@/app/context/customizerContext'
+import { CustomizerContext } from '@/context/customizerContext'
 import { Divider } from '@mui/material'
 
 const SidebarItems = () => {

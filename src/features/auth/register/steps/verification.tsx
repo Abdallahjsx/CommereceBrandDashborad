@@ -1,12 +1,12 @@
 import { Box, Typography, Card, Stack } from "@mui/material";
-import { IDIcon } from "@/app/components/icons/icons";
+import { IDIcon } from "@/components/icons/icons";
 import Grid from "@mui/material/Grid";
-import GeneralInputField from "@/app/components/inputFields/generalInputField";
+import GeneralInputField from "@/components/inputFields/generalInputField";
 import { useState } from "react";
-import { LampIcon, CheckIcon } from "@/app/components/icons/icons";
+import { LampIcon, CheckIcon } from "@/components/icons/icons";
 import { useFormik } from "formik";
-import ImageCardUploader from "@/app/components/inputFields/imageCardUploader";
-import GradientButton from "@/app/components/buttons/gradientButton";
+import ImageCardUploader from "@/components/inputFields/imageCardUploader";
+import GradientButton from "@/components/buttons/gradientButton";
 import { verificationSchema } from "../schemas/verificationSchema";
 
 

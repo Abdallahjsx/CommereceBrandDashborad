@@ -8,8 +8,8 @@ import {
   Toolbar,
   useMediaQuery,
 } from "@mui/material";
-import { CustomizerContext } from "@/app/context/customizerContext";
-import config from "@/app/context/config";
+import { CustomizerContext } from "@/context/customizerContext";
+import config from "@/context/config";
 import Language from "./Language";
 import Notifications from "./Notification";
 import Profile from "./Profile";

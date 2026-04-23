@@ -1,8 +1,8 @@
 'use client'
 import { Button, Stack } from "@mui/material";
 import Link from "next/link";
-import CustomTextField from "@/app/components/forms/theme-elements/CustomTextField";
-import CustomFormLabel from "@/app/components/forms/theme-elements/CustomFormLabel";
+import CustomTextField from "@/components/forms/theme-elements/CustomTextField";
+import CustomFormLabel from "@/components/forms/theme-elements/CustomFormLabel";
 
 export default function AuthForgotPassword() {
   return (

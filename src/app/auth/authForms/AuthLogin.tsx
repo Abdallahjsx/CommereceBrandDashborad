@@ -9,9 +9,9 @@ import {
   Divider,
 } from "@mui/material";
 import { loginType } from "@/app/(DashboardLayout)/types/auth/auth";
-import CustomCheckbox from "@/app/components/forms/theme-elements/CustomCheckbox";
-import CustomTextField from "@/app/components/forms/theme-elements/CustomTextField";
-import CustomFormLabel from "@/app/components/forms/theme-elements/CustomFormLabel";
+import CustomCheckbox from "@/components/forms/theme-elements/CustomCheckbox";
+import CustomTextField from "@/components/forms/theme-elements/CustomTextField";
+import CustomFormLabel from "@/components/forms/theme-elements/CustomFormLabel";
 import AuthSocialButtons from "./AuthSocialButtons";
 import { SetStateAction, useContext, useState } from "react";
 import { useRouter } from "next/navigation";

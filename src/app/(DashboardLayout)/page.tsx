@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import PageContainer from "@/app/components/container/PageContainer";
-import DashboardCard from "@/app/components/shared/DashboardCard";
+import PageContainer from "@/components/container/PageContainer";
+import DashboardCard from "@/components/shared/DashboardCard";
 import Breadcrumb from "@/app/(DashboardLayout)/layout/shared/breadcrumb/Breadcrumb";
 
 const BCrumb = [

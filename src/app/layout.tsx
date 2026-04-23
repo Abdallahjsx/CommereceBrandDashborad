@@ -1,7 +1,7 @@
 import React from 'react'
 import MyApp from './app'
 import NextTopLoader from 'nextjs-toploader';
-import { CustomizerContextProvider } from './context/customizerContext'
+import { CustomizerContextProvider } from '../context/customizerContext'
 
 
 export const metadata = {

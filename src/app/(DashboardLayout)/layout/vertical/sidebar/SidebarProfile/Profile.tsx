@@ -1,4 +1,4 @@
-import { CustomizerContext } from "@/app/context/customizerContext";
+import { CustomizerContext } from "@/context/customizerContext";
 import { Box, Typography, Button, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useContext } from "react";

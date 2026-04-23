@@ -3,7 +3,7 @@ import React, { ReactNode, useContext } from "react";
 import { Typography, Breadcrumbs, useTheme, Box } from "@mui/material";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { CustomizerContext } from "@/app/context/customizerContext";
+import { CustomizerContext } from "@/context/customizerContext";
 
 interface BreadCrumbItem {
   title: string;

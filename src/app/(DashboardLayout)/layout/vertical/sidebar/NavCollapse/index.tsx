@@ -1,5 +1,5 @@
 "use client";
-import { CustomizerContext } from "@/app/context/customizerContext";
+import { CustomizerContext } from "@/context/customizerContext";
 import {
   Collapse,
   ListItemButton,

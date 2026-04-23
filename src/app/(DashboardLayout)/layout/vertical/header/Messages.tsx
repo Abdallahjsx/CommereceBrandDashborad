@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import Menu, { MenuProps } from "@mui/material/Menu";
 import * as dropdownData from "./data";
-import Scrollbar from "@/app/components/custom-scroll/Scrollbar";
+import Scrollbar from "@/components/custom-scroll/Scrollbar";
 import { styled, alpha } from "@mui/material/styles";
 import { Stack } from "@mui/system";
 import Link from "next/link";

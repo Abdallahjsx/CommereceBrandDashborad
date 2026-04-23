@@ -1,5 +1,5 @@
 import { Card, Typography, Box, Stack } from "@mui/material";
-import InterestCard from "@/app/components/cards/interestCard";
+import InterestCard from "@/components/cards/interestCard";
 import { useState } from "react";
 import useGetInterests from "../hooks/getInterestsOptions";
 import Grid from "@mui/material/Grid";
@@ -12,8 +12,8 @@ export default function Interests() {
             {isLoading && <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh" }}>
                 <CircularProgress />
             </Box>}
-            <Box maxWidth={{sm:"100%",md:"70%"}} mx={"auto"} mb={"30px"}>
-                <Typography variant="h2" sx={{ fontWeight: "800", color: "primary.main", mb: "16px",  fontSize: "40px" }}>What defines your brand?</Typography>
+            <Box maxWidth={{ sm: "100%", md: "70%" }} mx={"auto"} mb={"30px"}>
+                <Typography variant="h2" sx={{ fontWeight: "800", color: "primary.main", mb: "16px", fontSize: "40px" }}>What defines your brand?</Typography>
                 <Typography variant="body1" sx={{ fontWeight: "400", color: "#46464F", mb: "16px", ml: "20px", fontSize: "18px" }}>Select the interests that best align with your corporate identity. This helps us
                     curate the most relevant connections for your brand.</Typography>
             </Box>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import NewLogo from "@/app/(DashboardLayout)/layout/shared/logo/NewLogo";
 import Link from "next/link";
 import Footer from "@/app/(DashboardLayout)/layout/shared/footer/Footer";
-import PageContainer from "@/app/components/container/PageContainer";
+import PageContainer from "@/components/container/PageContainer";
 
 export default function LoginPage() {
   return (

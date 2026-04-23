@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useState } from "react";
-import Scrollbar from "@/app/components/custom-scroll/Scrollbar";
+import Scrollbar from "@/components/custom-scroll/Scrollbar";
 import {
   Avatar,
   Box,

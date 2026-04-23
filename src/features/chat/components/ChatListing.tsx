@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { ChatContext } from "@/context/ChatContext/index";
-import Scrollbar from "@/components/custom-scroll/Scrollbar";
+import Scrollbar from "@/components/ui/custom-scroll/Scrollbar";
 import { ChatsType } from "@/features/chat/types";
 import { last } from "lodash";
 import { formatDistanceToNowStrict } from "date-fns";

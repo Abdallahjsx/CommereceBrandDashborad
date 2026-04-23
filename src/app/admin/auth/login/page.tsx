@@ -5,6 +5,8 @@ import NewLogo from "@/components/layout/shared/logo/NewLogo";
 import Link from "next/link";
 import Footer from "@/components/layout/shared/footer/Footer";
 import PageContainer from "@/components/ui/container/PageContainer";
+import AuthLogin from "@/features/auth/authForms/AuthLogin";
+
 
 export default function LoginPage() {
   return (
@@ -50,7 +52,7 @@ export default function LoginPage() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                p: { xs: 2, sm: 4, lg: 7 },
+                p: { xs: 2, sm: 3, lg: 4 },
                 gap: 2,
                 boxShadow: "0px 3px 6px 0px #0000000A",
               }}
@@ -58,41 +60,12 @@ export default function LoginPage() {
               <Box>
                 <NewLogo />
               </Box>
-              <Box sx={{ overflowY: "auto", maxHeight: "100%" }}>
-                {/* <AuthLogin
-                  title="Welcome to NiceAdmin"
-                  subtext={
-                    <Typography
-                      variant="subtitle1"
-                      color="textSecondary"
-                      mb={1}
-                    >
-                      Your Admin Dashboard
-                    </Typography>
-                  }
-                  subtitle={
-                    <Stack direction="row" spacing={1} mt={3}>
-                      <Typography
-                        color="textSecondary"
-                        variant="h6"
-                        fontWeight="500"
-                      >
-                        New to NiceAdmin?
-                      </Typography>
-                      <Typography
-                        component={Link}
-                        href="/auth/auth1/register"
-                        fontWeight="500"
-                        sx={{
-                          textDecoration: "none",
-                          color: "primary.main",
-                        }}
-                      >
-                        Create an account
-                      </Typography>
-                    </Stack>
-                  }
-                /> */}
+              <Box sx={{ overflowY: "auto", maxHeight: "100%", p: "8px" }}>
+                <AuthLogin
+                  title="Welcome to Alluvo Dashboard"
+                  role="admin"
+          
+                />
               </Box>
             </Box>
 

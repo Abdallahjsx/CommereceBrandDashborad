@@ -1,6 +1,6 @@
 import { Card, Typography, Box, Stack } from "@mui/material";
-import IconBox from "@/components/boxes/iconBox";
-import { CompassIcon, MoneyIcon, ListIcon, LockIcon, WatchIcon, UploadIcon2, TimerIcon, AddMember } from "@/components/icons/icons";
+import IconBox from "@/components/ui/boxes/iconBox";
+import { CompassIcon, MoneyIcon, ListIcon, LockIcon, WatchIcon, UploadIcon2, TimerIcon, AddMember } from "@/components/ui/icons/icons";
 
 
 export default function Success() {

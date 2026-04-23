@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { CustomizerContext } from '../context/customizerContext'
 import { ThemeSettings } from '@/utils/theme/Theme'
 import '@/utils/i18n'
-import RTL from './(DashboardLayout)/layout/shared/customizer/RTL'
+import RTL from '../components/layout/shared/customizer/RTL'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 

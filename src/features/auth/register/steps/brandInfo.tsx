@@ -1,16 +1,16 @@
 import { Box, Card, Typography } from "@mui/material";
-import SelectElement from "@/components/inputFields/selectElement";
-import { EarthIcon } from "@/components/icons/icons";
+import SelectElement from "@/components/ui/inputFields/selectElement";
+import { EarthIcon } from "@/components/ui/icons/icons";
 import { useState, useEffect } from "react";
-import GeneralInputField from "@/components/inputFields/generalInputField";
-import TextAreaField from "@/components/inputFields/textAreaField";
-import LogoUploader from "@/components/inputFields/logoUploader";
+import GeneralInputField from "@/components/ui/inputFields/generalInputField";
+import TextAreaField from "@/components/ui/inputFields/textAreaField";
+import LogoUploader from "@/components/ui/inputFields/logoUploader";
 import Grid from "@mui/material/Grid";
-import DescriptiveAlert from "@/components/alerts/descriptiveAlert";
+import DescriptiveAlert from "@/components/ui/alerts/descriptiveAlert";
 import { useFormik } from "formik";
 import { useGetCountriesOptions } from "../hooks/getLoctionOptions";
 import { useGetCitiesOptions } from "../hooks/getLoctionOptions";
-import GradientButton from "@/components/buttons/gradientButton";
+import GradientButton from "@/components/ui/buttons/gradientButton";
 import brandInfoSchema from "../schemas/brandInfoSchema";
 
 export default function BrandInfo({ setActiveStep }: { setActiveStep: (step: number) => void }) {

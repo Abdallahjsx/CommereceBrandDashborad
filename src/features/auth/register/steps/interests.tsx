@@ -1,5 +1,5 @@
 import { Card, Typography, Box, Stack } from "@mui/material";
-import InterestCard from "@/app/components/cards/interestCard";
+import InterestCard from "@/components/ui/cards/interestCard";
 import { useState } from "react";
 import useGetInterests from "../hooks/getInterestsOptions";
 import Grid from "@mui/material/Grid";

@@ -2,10 +2,10 @@
 import { Grid, Box, Card, Typography, LinearProgress, Stack } from "@mui/material";
 import Image from "next/image";
 
-import PageContainer from "@/app/components/container/PageContainer";
+import PageContainer from "@/components/ui/container/PageContainer";
 
 
-import AuthPageContainer from "../authPageContainer/authPageContainer";
+import AuthPageContainer from "@/features/auth/authPageContainer/authPageContainer";
 import MainStepper from "@/features/auth/register/steps/mainStepper";
 import UserInfo from "@/features/auth/register/steps/userInfo";
 import Interests from "@/features/auth/register/steps/interests";

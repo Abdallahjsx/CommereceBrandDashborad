@@ -64,7 +64,7 @@ export default function RootLayout({
                 {/* PageContent */}
 
                 {activeLayout === 'horizontal' ? <HorizontalHeader /> : ""}
-                {activeLayout === 'horizontal' ? <Navigation /> : ""}
+                {activeLayout === 'horizontal' ? <Navigation role="admin" /> : ""}
                 <Container
 
                     maxWidth={false}

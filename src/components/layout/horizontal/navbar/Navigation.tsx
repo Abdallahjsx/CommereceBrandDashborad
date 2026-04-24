@@ -9,9 +9,10 @@ import SidebarItems from '../../vertical/sidebar/SidebarItems';
 import { CustomizerContext } from '@/context/customizerContext';
 import { useContext } from 'react';
 import config from '@/context/config';
+import { roleType } from '@/features/auth/types/auth';
 
 
-const Navigation = () => {
+const Navigation = ({ role }: { role: roleType }) => {
   const lgUp = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'));
   const { isLayout, isMobileSidebar, setIsMobileSidebar } = useContext(CustomizerContext);
   const SidebarWidth = config.sidebarWidth;
@@ -57,7 +58,7 @@ const Navigation = () => {
       {/* ------------------------------------------- */}
       {/* Sidebar For Mobile */}
       {/* ------------------------------------------- */}
-      <SidebarItems />
+      <SidebarItems role={role} />
     </Drawer>
   );
 };

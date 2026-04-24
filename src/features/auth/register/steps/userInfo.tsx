@@ -10,7 +10,6 @@ import UploadProfileImage from "@/components/ui/inputFields/uploadProfileImage";
 import { userInfoSchema } from "../schemas/userInfoSchema";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Theme } from "@mui/material/styles";
-import { AddIcon } from "@/app/components/icons/icons";
 export default function UserInfo({ setActiveStep }: { setActiveStep: (step: number) => void }) {
     const [seen, setSeen] = useState<boolean>(false)
     const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down("md"));

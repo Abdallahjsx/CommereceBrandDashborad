@@ -12,9 +12,10 @@ const AppCard = ({ children }: Props) => {
 
   return (
     <Card
-      sx={{ display: 'flex', p: 0 }}
+      sx={{ display: 'flex', p: 0, mt: 1 }}
       elevation={isCardShadow ? 9 : 0}
       variant={!isCardShadow ? 'outlined' : undefined}
+
     >
       {children}
     </Card>

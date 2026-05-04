@@ -11,7 +11,7 @@ const config = {
   isMobileSidebar: false,
   isHorizontal: false,
   isBorderRadius: 12,
-  sidebarWidth: 270,
+  sidebarWidth: 300,
   miniSidebarWidth: 87,
   topbarHeight: 140, // from 70 to 140 
 };

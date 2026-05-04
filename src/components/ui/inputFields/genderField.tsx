@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function GenderField({ selectedGender, setSelectedGender, error, helperText }: { selectedGender: string, setSelectedGender: (gender: string) => void, error: boolean | undefined, helperText: string | undefined }) {
     return (
-        <Box display={"flex"} flexDirection={"column"} alignItems={"center"} width={"100%"} gap={1}>
-            <Box display={"flex"} flexDirection={{ xs: "column", sm: "row", md: "column" }} gap={{ xs: 2, sm: 6, md: 2 }} alignItems={"center"} justifyContent={"center"}>
-                <Typography variant="body1" sx={{ fontWeight: "500", color: "primary.main" }}>Gender</Typography>
+        <Box display={"flex"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"} width={"100%"} gap={0} >
+            <Box display={"flex"} flexDirection={"row"} alignItems={"center"} justifyContent={"center"} gap={10} width={"100%"}>
+                <Typography variant="body1" sx={{ fontWeight: "500", fontSize: "16px", color: "primary.main" }}>Gender</Typography>
                 <Box
                     sx={{
                         display: "flex",
@@ -115,6 +115,6 @@ export default function GenderField({ selectedGender, setSelectedGender, error, 
                 </Box>
             </Box>
             {error && <Typography variant="body2" color="error" sx={{ width: "100%", textAlign: "center" }}>{helperText}</Typography>}
-        </Box>
+        </Box >
     );
 }

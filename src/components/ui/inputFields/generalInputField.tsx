@@ -1,5 +1,10 @@
 import { Card, Box, Typography } from "@mui/material";
+import CustomTextField from "../forms/theme-elements/CustomTextField";
+import CustomFormLabel from "../forms/theme-elements/CustomFormLabel";
+import { SetStateAction } from "react";
+
 type inputFieldProps = {
+    name: string,
     label: string,
     type: "text" | "password" | "email" | "tel",
     placeholder: string,
@@ -10,32 +15,34 @@ type inputFieldProps = {
     disabled: boolean,
     icon?: React.ReactNode,
     fixedString?: string,
-    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void,
+    onBlur?: React.FocusEventHandler<HTMLInputElement>,
     optional?: boolean,
+    onFocus?: () => void,
 }
-export default function GeneralInputField({ label, type, placeholder, value, onChange, error, helperText, disabled, icon, fixedString, onBlur, optional = false }: inputFieldProps) {
+export default function GeneralInputField({ name, label, type, placeholder, value, onChange, error, helperText, disabled, icon, fixedString, onBlur, optional = false, onFocus }: inputFieldProps) {
     return (
-        <Box width={"100%"} mt={"8px"}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                <Typography variant="body1" sx={{ fontWeight: "500", color: "primary.main" }}>{label}</Typography>
-                {optional && <Typography variant="body2" sx={{ fontWeight: "300", color: "gray" }}>(Optional)</Typography>}
-            </Box>
-            <Card sx={{ backgroundColor: disabled ? "#F5F5F5" : "#FFFFFF", padding: "10px", borderRadius: "7px", border: "1px solid ", borderColor: error ? "red" : "#0000001A", mb: "0px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                {fixedString && <Typography variant="body1" sx={{ fontWeight: "700", color: "gray", mr: "10px" }}>{fixedString}</Typography>}
-                <input
+        <Box width={"100%"} mt={"0px"}>
+            <Box width={"100%"}>
+                <CustomFormLabel htmlFor={label}>{label}</CustomFormLabel>
+                <CustomTextField
+                    error={error}
+                    type={type}
+                    onFocus={onFocus}
+                    name={name}
+                    id={label}
+                    variant="outlined"
+                    fullWidth
+                    value={value}
+                    onChange={onChange}
                     onBlur={onBlur}
-                    style={{
-                        width: "100%", height: "100%", borderRadius: "7px",
-                        border: "none",
-                        outline: "none",
-                        backgroundColor: "transparent",
-                        color: "#000",
-                        fontSize: "16px",
-                        fontWeight: "500",
-                    }} type={type} placeholder={placeholder} value={value} onChange={onChange} disabled={disabled} />
-                {icon}
-            </Card>
-            {error && <Typography variant="body2" color="error" mt={"2px"}>{helperText}</Typography>}
+                    placeholder={placeholder}
+                    InputProps={{
+                        endAdornment: icon,
+                        startAdornment: type === 'tel' ? <Typography sx={{ opacity: "0.75", fontSize: "16px", fontWeight: "700", color: "primary.main" }}>+20</Typography> : null
+                    }}
+                />
+            </Box>
+            {error && <Typography variant="body2" color="error" mt={"1px"} sx={{ opacity: error ? 1 : 0 }}>{helperText}</Typography>}
         </Box>
     )
 }

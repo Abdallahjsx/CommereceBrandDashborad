@@ -9,7 +9,7 @@ import config from "@/context/config";
 import NewLogo from "@/components/layout/shared/logo/NewLogo";
 import Scrollbar from "@/components/ui/custom-scroll/Scrollbar";
 import { Profile } from "./SidebarProfile/Profile";
-import { roleType } from "@/features/auth/types/auth";
+import { roleType } from "@/features/brand/auth/types/auth";
 import { useContext } from "react";
 
 const Sidebar = ({ role }: { role: roleType }) => {

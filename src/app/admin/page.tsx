@@ -3,7 +3,7 @@ import { redirect } from "next/navigation"
 
 export default function AdminPage() {
     if (true) {
-        redirect('/admin/main')
+        redirect('/admin/home')
     } else {
         redirect('/admin/auth/login')
     }

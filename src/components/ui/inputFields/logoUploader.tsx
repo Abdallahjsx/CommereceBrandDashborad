@@ -32,10 +32,9 @@ export default function Uploader({ value, setValue, error, helperText }: { value
                     sx={{
                         position: "relative",
                         height: "200px",
-                        width: "100%",
+                        width: "76%",
+                        mx: "auto",
                         borderRadius: "4px",
-
-
                         "&:hover .hover-overlay": {
                             opacity: 1,
                         },

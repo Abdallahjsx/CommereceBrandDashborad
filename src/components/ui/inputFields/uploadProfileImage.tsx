@@ -9,7 +9,7 @@ type uploadImageProps = {
     error: boolean | undefined,
     helperText: string | undefined,
 }
-export default function UploadImage({ value, onChange, error, helperText }: uploadImageProps) {
+export default function UploadProfileImage({ value, onChange, error, helperText }: uploadImageProps) {
     const [preview, setPreview] = useState<string | null>(null);
 
     useEffect(() => {
@@ -85,7 +85,12 @@ export default function UploadImage({ value, onChange, error, helperText }: uplo
                     type="file"
                     id="profile-upload"
                     accept="image/*"
-                    onChange={onChange}
+                    onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) {
+                            onChange(e);
+                        }
+                    }}
                     style={{ display: "none" }}
                 />
                 {error && <Typography variant="body2" color="error" mt={"2px"}>{helperText}</Typography>}

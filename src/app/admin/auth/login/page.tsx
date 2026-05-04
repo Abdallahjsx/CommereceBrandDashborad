@@ -5,7 +5,7 @@ import NewLogo from "@/components/layout/shared/logo/NewLogo";
 import Link from "next/link";
 import Footer from "@/components/layout/shared/footer/Footer";
 import PageContainer from "@/components/ui/container/PageContainer";
-import AuthLogin from "@/features/auth/authForms/AuthLogin";
+import AuthLogin from "@/features/brand/auth/authForms/AuthLogin";
 
 
 export default function LoginPage() {
@@ -64,7 +64,7 @@ export default function LoginPage() {
                 <AuthLogin
                   title="Welcome to Alluvo Dashboard"
                   role="admin"
-          
+
                 />
               </Box>
             </Box>

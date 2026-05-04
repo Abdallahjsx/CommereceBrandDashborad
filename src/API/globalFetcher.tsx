@@ -21,3 +21,18 @@ export const deleteFetcher = async (url: string) => {
     const response = await apiCall.delete(url);
     return response.data;
 };
+
+/// get url from file 
+export async function getUrl(file: File | null) {
+    if (!file) {
+        return "";
+    }
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await apiCall.post("/Media/upload", formData, {
+        headers: {
+            "Content-Type": "multipart/form-data",
+        },
+    });
+    return response.data;
+}

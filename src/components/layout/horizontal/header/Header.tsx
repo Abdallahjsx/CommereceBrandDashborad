@@ -9,11 +9,11 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { styled } from "@mui/material/styles";
 import { CustomizerContext } from "@/context/customizerContext";
 import { IconMenu2, IconMoon, IconSun } from "@tabler/icons-react";
-import Notifications from "../../vertical/header/Notification";
-import Cart from "../../vertical/header/Cart";
-import Profile from "../../vertical/header/Profile";
-import Search from "../../vertical/header/Search";
-import Language from "../../vertical/header/Language";
+import Notifications from "../../vertical/brandHeader/Notification";
+import Cart from "../../vertical/brandHeader/Cart";
+import Profile from "../../vertical/brandHeader/Profile";
+import Search from "../../vertical/brandHeader/Search";
+import Language from "../../vertical/brandHeader/Language";
 
 import NewLogo from "../../shared/logo/NewLogo";
 import config from "@/context/config";

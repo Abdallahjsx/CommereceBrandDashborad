@@ -4,7 +4,7 @@ import Sidebar from '../../../components/layout/vertical/sidebar/Sidebar'
 import { useContext } from 'react'
 import { CustomizerContext } from '../../../context/customizerContext'
 import config from '@/context/config'
-import Header from '../../../components/layout/vertical/header/Header'
+import Header from '../../../components/layout/vertical/adminHeader/Header'
 import Customizer from '../../../components/layout/shared/customizer/Customizer'
 import Footer from '../../../components/layout/shared/footer/Footer'
 import HorizontalHeader from "../../../components/layout/horizontal/header/Header";
@@ -59,7 +59,7 @@ export default function RootLayout({
                 {/* ------------------------------------------- */}
                 {/* Header */}
                 {/* ------------------------------------------- */}
-                {/* {activeLayout === 'horizontal' ? '' : <Header />} */}
+                {activeLayout === 'horizontal' ? '' : <Header />}
 
                 {/* PageContent */}
 

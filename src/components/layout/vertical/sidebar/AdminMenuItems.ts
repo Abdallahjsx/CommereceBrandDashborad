@@ -23,9 +23,9 @@ const Menuitems: MenuitemsType[] = [
   },
   {
     id: uniqueId(),
-    title: "Main Page",
+    title: "Home",
     icon: "mdi:view-dashboard-outline",
-    href: "/admin",
+    href: "/admin/home",
   },
   {
     id: uniqueId(),
@@ -34,20 +34,20 @@ const Menuitems: MenuitemsType[] = [
     href: "/admin/requests",
   },
 
-//   { divider: true },
-//   {
-//     id: uniqueId(),
-//     title: "Chat",
-//     icon: "solar:chat-round-dots-outline",
+  //   { divider: true },
+  //   {
+  //     id: uniqueId(),
+  //     title: "Chat",
+  //     icon: "solar:chat-round-dots-outline",
 
-//     href: "/chat",
-//     chip: "9",
-//     chipColor: "primary",
-//   },
-//   {
-//     navlabel: true,
-//     subheader: "Other",
-//   },
+  //     href: "/chat",
+  //     chip: "9",
+  //     chipColor: "primary",
+  //   },
+  //   {
+  //     navlabel: true,
+  //     subheader: "Other",
+  //   },
   // {
   //   id: uniqueId(),
   //   title: "Menu Level",

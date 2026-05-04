@@ -16,9 +16,10 @@ type Props = {
     options: { value: string, label: string }[];
     icon?: React.ReactNode;
     placeholder?: string;
+    name?: string;
 }
 
-export default function SelectElement({ label, value, onChange, error, helperText, options, icon, placeholder }: Props) {
+export default function SelectElement({ name, label, value, onChange, error, helperText, options, icon, placeholder }: Props) {
     const cardRef = useRef<HTMLDivElement>(null);
     const [cardWidth, setCardWidth] = useState<number>(0);
 
@@ -57,6 +58,7 @@ export default function SelectElement({ label, value, onChange, error, helperTex
                     </Box>
                 )}
                 <Select
+                    name={name}
                     disabled={options.length === 0}
                     fullWidth
                     value={value}

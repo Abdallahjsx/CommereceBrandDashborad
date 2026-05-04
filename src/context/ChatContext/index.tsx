@@ -2,7 +2,7 @@
 import { createContext, useState, useEffect, ReactNode, Dispatch, SetStateAction } from 'react';
 import React from "react";
 import useSWR from 'swr';
-import { ChatsType, MessageType } from '@/features/chat/types';
+import { ChatsType, MessageType } from '@/features/brand/chat/types';
 import { getFetcher, postFetcher } from '@/API/globalFetcher';
 
 

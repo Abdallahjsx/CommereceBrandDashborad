@@ -10,7 +10,7 @@ import NavGroup from './NavGroup/NavGroup'
 import { useContext } from 'react'
 import { CustomizerContext } from '@/context/customizerContext'
 import { Divider } from '@mui/material'
-import { roleType } from '@/features/auth/types/auth'
+import { roleType } from '@/features/brand/auth/types/auth'
 
 const SidebarItems = ({ role }: { role: roleType }) => {
   const pathname = usePathname()

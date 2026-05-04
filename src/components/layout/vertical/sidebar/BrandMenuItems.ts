@@ -18,17 +18,56 @@ interface MenuitemsType {
 
 const Menuitems: MenuitemsType[] = [
   {
-    navlabel: true,
-    subheader: "Home",
+    id: uniqueId(),
+    title: "Home",
+    icon: "solar:chart-square-line-duotone",
+    href: "/home",
   },
+  // products management elements
   {
     id: uniqueId(),
-    title: "Sample Page",
-    icon: "solar:book-line-duotone",
-    href: "/",
+    title: "Products Management",
+    icon: "solar:box-minimalistic-line-duotone",
+    navlabel: false,
+    children: [
+      {
+        id: uniqueId(),
+        title: "Products",
+        icon: "solar:stop-circle-line-duotone",
+        href: `/products-management/products`,
+      },
+      {
+        id: uniqueId(),
+        title: "Add Product",
+        icon: "solar:stop-circle-line-duotone",
+        href: "/products-management/add-product",
+      },
+    ],
+  },
+  // community elements
+  {
+    id: uniqueId(),
+    title: "Community",
+    icon: "solar:widget-4-line-duotone",
+    navlabel: false,
+    children: [
+      {
+        id: uniqueId(),
+        title: "Blogs",
+        icon: "solar:stop-circle-line-duotone",
+        href: `/community/blogs`,
+      },
+      {
+        id: uniqueId(),
+        title: "Add Blog",
+        icon: "solar:stop-circle-line-duotone",
+        href: `/community/add-blog`,
+      },
+    ],
   },
 
-  { divider: true },
+  // { divider: true },
+  // chat elements
   {
     id: uniqueId(),
     title: "Chat",
@@ -38,10 +77,10 @@ const Menuitems: MenuitemsType[] = [
     chip: "9",
     chipColor: "primary",
   },
-  {
-    navlabel: true,
-    subheader: "Other",
-  },
+  // {
+  //   navlabel: true,
+  //   subheader: "Other",
+  // },
   // {
   //   id: uniqueId(),
   //   title: "Menu Level",

@@ -9,7 +9,7 @@ import SidebarItems from '../../vertical/sidebar/SidebarItems';
 import { CustomizerContext } from '@/context/customizerContext';
 import { useContext } from 'react';
 import config from '@/context/config';
-import { roleType } from '@/features/auth/types/auth';
+import { roleType } from '@/features/brand/auth/types/auth';
 
 
 const Navigation = ({ role }: { role: roleType }) => {

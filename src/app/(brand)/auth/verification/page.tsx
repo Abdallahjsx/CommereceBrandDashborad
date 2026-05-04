@@ -14,7 +14,6 @@ import { useRouter } from "next/navigation";
 
 
 export default function Verification() {
-    // حالة الخطوة الحالية
     const { step, setStep }: any = useContext(AuthContext);
     const router = useRouter();
     const isMobile = useMediaQuery("(max-width: 600px)");

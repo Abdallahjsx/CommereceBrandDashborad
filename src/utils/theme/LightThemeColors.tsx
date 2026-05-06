@@ -13,10 +13,32 @@ const LightThemeColors = [
 
       },
       background: {
-        default: '#f5f5f5',
+        default: '#f4f2ecff',
         dark: '#2A3547',
         paper: '#ffffff',
+        success: "#EDFFF6",
+        info: "#DDEEFD",
+        warning: "#FEF3C7",
+        danger: "#FEE2E2",
+        light: "#F5F5F5",
+        heavy: "#50546E"
       },
+      typographyColors: {
+        title: "#383644",
+        subtitle: "#535456",
+        body: "#30343C",
+        hint: "#ABADB6",
+        link: "#3E548D",
+        success: "#10B981",
+        info: "#4A90E2",
+        warning: "#F59E0B",
+        danger: "#EF4444",
+        secondary: "#FE6239",
+        inactive: "#919193",
+      },
+      border: {
+        danger: "#FFB3B3"
+      }
     },
   },
   {

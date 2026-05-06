@@ -1,7 +1,7 @@
 import axios from "axios";
 export const apiCall = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL,
-    timeout: 5000,
+    timeout: 500000,
     headers: { "Content-Type": "application/json", Accept: "text/plain" },
 });
 apiCall.interceptors.request.use((config: any) => {

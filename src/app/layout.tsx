@@ -1,7 +1,8 @@
 import React from 'react'
 import MyApp from './app'
 import NextTopLoader from 'nextjs-toploader';
-import { CustomizerContextProvider } from './context/customizerContext'
+import { CustomizerContextProvider } from '../context/customizerContext'
+import AuthContextProvider from '@/context/authContext'
 
 
 export const metadata = {
@@ -19,10 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body>
-        <NextTopLoader color="#001170" />
+      <body suppressHydrationWarning>
         <CustomizerContextProvider>
-          <MyApp>{children}</MyApp>
+          <AuthContextProvider>
+            <NextTopLoader color="#001170" />
+            <MyApp>{children}</MyApp>
+          </AuthContextProvider>
         </CustomizerContextProvider>
       </body>
     </html>

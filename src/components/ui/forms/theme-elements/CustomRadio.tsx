@@ -1,14 +1,18 @@
 'use client'
-import * as React from 'react';
+
+
+
 import { styled } from '@mui/material/styles';
 import Radio, { RadioProps } from '@mui/material/Radio';
+
 
 const BpIcon = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   width: 21,
   height: 21,
-  boxShadow: `0 0 0 1px ${theme.palette.divider}`,
+  border: `1px solid ${theme.palette.divider}`,
   backgroundColor: 'transparent',
+  position: 'relative',
   '.Mui-focusVisible &': {
     outline: `0px auto ${theme.palette.divider}`,
     outlineOffset: 2,
@@ -26,13 +30,15 @@ const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
   boxShadow: 'none',
   '&:before': {
     display: 'block',
-    width: 21,
-    height: 21,
+    width: 19,
+    height: 19,
     backgroundImage:
       theme.palette.mode === 'dark'
         ? `radial-gradient(${theme.palette.background.paper},${theme.palette.background.paper} 28%,transparent 32%)`
         : 'radial-gradient(#fff,#fff 28%,transparent 32%)',
     content: '""',
+
+
   },
 }));
 
@@ -50,10 +56,40 @@ function CustomRadio(props: RadioProps) {
         />
       }
       icon={<BpIcon />}
-      inputProps={{ 'aria-label': 'Checkbox demo' }}
+
+      slotProps={{
+        input: {
+          'aria-label': 'RadioButton demo'
+        }
+      }}
       {...props}
     />
   );
 }
 
 export default CustomRadio;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

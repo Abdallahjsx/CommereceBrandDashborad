@@ -35,12 +35,31 @@ export const AuthContext = createContext<AuthContextType>({
 
 
 export default function AuthContextProvider({ children }: { children: React.ReactNode }) {
-    const [step, setStep] = useState(localStorage.getItem("step") ? parseInt(localStorage.getItem("step") as string) : 1);
+    const [step, setStep] = useState(1);
     const [email, setEmail] = useState("");
-    const [user, setUser] = useState(localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) : null);
-    const [token, setToken] = useState(localStorage.getItem("token") || "");
-    const [verificationErrorState, setVerificationErrorState] = useState(localStorage.getItem("verificationErrorState") ? JSON.parse(localStorage.getItem("verificationErrorState") as string) : false);
+    const [user, setUser] = useState<any>(null);
+    const [token, setToken] = useState("");
+    const [verificationErrorState, setVerificationErrorState] = useState(false);
     const [verificationTimer, setVerificationTimer] = useState(60);
+
+    // Load from localStorage on mount
+    useEffect(() => {
+        const storedStep = localStorage.getItem("step");
+        if (storedStep) setStep(parseInt(storedStep));
+
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) setUser(JSON.parse(storedUser));
+
+        const storedToken = localStorage.getItem("token");
+        if (storedToken) setToken(storedToken);
+
+        const storedVerificationError = localStorage.getItem("verificationErrorState");
+        if (storedVerificationError) setVerificationErrorState(JSON.parse(storedVerificationError));
+
+        const storedEmail = localStorage.getItem("email");
+        if (storedEmail) setEmail(storedEmail);
+    }, []);
+
     const value: AuthContextType = { step, setStep, email, setEmail, user, setUser, token, setToken, verificationErrorState, setVerificationErrorState, verificationTimer, setVerificationTimer };
 
 

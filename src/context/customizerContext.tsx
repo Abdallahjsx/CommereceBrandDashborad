@@ -138,8 +138,6 @@ export const CustomizerContextProvider: React.FC<Props> = ({ children }) => {
     setStorage('isLanguage', val)
   }
 
-  if (!isReady) return null
-
   return (
     <CustomizerContext.Provider
       value={{

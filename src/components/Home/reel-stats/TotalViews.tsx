@@ -4,6 +4,7 @@ import BlankCard from '../../shared/BlankCard'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import dynamic from 'next/dynamic'
 import { ApexOptions } from 'apexcharts'
+import { ApexAxisChartSeries } from 'apexcharts'  
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const TotalViews = () => {

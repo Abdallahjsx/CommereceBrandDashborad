@@ -11,6 +11,7 @@ import {
 import BlankCard from '../../shared/BlankCard'
 import { ApexOptions } from 'apexcharts'
 import dynamic from 'next/dynamic'
+import { ApexAxisChartSeries } from 'apexcharts'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ContentReachAnalysis = () => {

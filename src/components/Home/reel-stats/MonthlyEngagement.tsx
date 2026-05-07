@@ -3,6 +3,7 @@ import BlankCard from '../../shared/BlankCard'
 import { Box, Chip, Stack, Typography, useTheme } from '@mui/material'
 import { ApexOptions } from 'apexcharts'
 import dynamic from 'next/dynamic'
+import { ApexAxisChartSeries } from 'apexcharts';
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const MonthlyEngagement = () => {

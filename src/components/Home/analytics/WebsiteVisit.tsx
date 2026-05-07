@@ -12,7 +12,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { BarChart } from "@mui/x-charts/BarChart";
+import { BarChart } from "@mui/x-charts";
 import SkeletonRevenueUpdatesTwoCard from "../skeleton/RevenueUpdatesTwoCard";
 import CustomSelect from "../../ui/forms/theme-elements/CustomSelect";
 

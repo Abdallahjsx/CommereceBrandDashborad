@@ -1,6 +1,6 @@
 'use client'
 import * as React from 'react';
-import { Snackbar, Alert, AlertTitle, SnackbarCloseReason, useTheme, IconButton } from '@mui/material';
+import { Snackbar, Alert, AlertTitle, SnackbarCloseReason, useTheme, IconButton, Typography } from '@mui/material';
 import { IconX } from '@tabler/icons-react';
 
 const Welcome = () => {
@@ -58,8 +58,10 @@ const Welcome = () => {
                     }
                     sx={{ backgroundColor: theme.palette.primary.main, }}
                 >
-                    <AlertTitle>Welcome to NiceAdmin</AlertTitle>
-                    Easy to customize the Template!!!
+                    <AlertTitle sx={{ color: 'white' }}>Welcome to Brand Dashboard</AlertTitle>
+                    <Typography variant="body2" sx={{ color: 'white' }}>
+                        Your dashboard is ready! Track your sales and content performance in one place.
+                    </Typography>
                 </Alert>
             </Snackbar >
         </React.Fragment >

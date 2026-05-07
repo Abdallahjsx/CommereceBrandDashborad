@@ -1,32 +1,35 @@
-import React from 'react';
+'use client'
+
+
 import { styled } from '@mui/material/styles';
 import Checkbox, { CheckboxProps } from '@mui/material/Checkbox';
-
+import React from 'react';
 const BpIcon = styled('span')(({ theme }) => ({
   borderRadius: 3,
   width: 19,
   height: 19,
-  boxShadow: `0 0 0 1px ${theme.palette.divider}`,
-
   backgroundColor: 'transparent',
+
+  border: `1px solid ${theme.palette.divider}`,
   '.Mui-focusVisible &': {
-    outline: `0px auto ${theme.palette.divider}`,
+    outline: `inset 0 0 0 1px ${theme.palette.divider}`,
     outlineOffset: 2,
   },
   'input:hover ~ &': {
-    backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary : theme.palette.primary,
+    backgroundColor: theme.palette.primary,
   },
-
   'input:disabled ~ &': {
     boxShadow: 'none',
     background: theme.palette.divider,
   },
 }));
 
-const BpCheckedIcon = styled(BpIcon)({
+
+const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
   boxShadow: 'none',
   width: 19,
   height: 19,
+  backgroundColor: theme.palette.primary.main,
   '&:before': {
     display: 'block',
     width: 19,
@@ -37,12 +40,11 @@ const BpCheckedIcon = styled(BpIcon)({
       "1.003 0 00-1.42 1.42l3 3c.18.18.43.29.71.29s.53-.11.71-.29l5-5A1.003 1.003 0 0012 5z' fill='%23fff'/%3E%3C/svg%3E\")",
     content: '""',
   },
-});
+}));
 
 // Use React.forwardRef to forward the ref
 const CustomCheckbox = React.forwardRef<HTMLButtonElement, CheckboxProps>((props, ref) => (
   <Checkbox
-
     color={props.color || 'default'}
     checkedIcon={
       <BpCheckedIcon
@@ -52,7 +54,13 @@ const CustomCheckbox = React.forwardRef<HTMLButtonElement, CheckboxProps>((props
       />
     }
     icon={<BpIcon />}
-    inputProps={{ 'aria-label': 'Checkbox demo' }}
+
+
+    slotProps={{
+      input: {
+        'aria-label': 'Checkbox demo'
+      }
+    }}
     ref={ref}
     {...props}
   />
@@ -63,3 +71,5 @@ CustomCheckbox.displayName = 'CustomCheckbox';
 
 
 export default CustomCheckbox;
+
+
